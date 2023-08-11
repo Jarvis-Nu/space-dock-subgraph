@@ -1,0 +1,36 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: SpaceDock
+    network: optimism-goerli
+    source:
+      address: "0x70ada6a349c7ef156c6008785f9859665f6b55f2"
+      abi: SpaceDock
+      startBlock: 13142325
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - RoleAdminChanged
+        - RoleGranted
+        - RoleRevoked
+        - VentureBaseURIUpdated
+        - VentureCreated
+      abis:
+        - name: SpaceDock
+          file: ./abis/SpaceDock.json
+      eventHandlers:
+        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
+          handler: handleRoleAdminChanged
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
+        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleRevoked
+        - event: VentureBaseURIUpdated(indexed address,string)
+          handler: handleVentureBaseURIUpdated
+        - event: VentureCreated(indexed uint256,(string,string,string,(string,string,string,string),address),indexed address,uint256)
+          handler: handleVentureCreated
+      file: ./src/space-dock.ts

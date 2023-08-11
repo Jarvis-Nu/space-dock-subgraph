@@ -1,0 +1,8 @@
+{
+  "optimism-goerli": {
+    "SpaceDock": {
+      "address": "0x70ada6a349c7ef156c6008785f9859665f6b55f2",
+      "startBlock": 13142325
+    }
+  }
+}

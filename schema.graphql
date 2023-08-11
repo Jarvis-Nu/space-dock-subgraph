@@ -1,0 +1,56 @@
+type RoleAdminChanged @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  previousAdminRole: Bytes! # bytes32
+  newAdminRole: Bytes! # bytes32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RoleGranted @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  account: Bytes! # address
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RoleRevoked @entity(immutable: true) {
+  id: Bytes!
+  role: Bytes! # bytes32
+  account: Bytes! # address
+  sender: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type VentureBaseURIUpdated @entity(immutable: true) {
+  id: Bytes!
+  founder: Bytes! # address
+  ventureBaseURI: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type VentureCreated @entity(immutable: true) {
+  id: Bytes!
+  ventureId: BigInt! # uint256
+  data_name: String! # string
+  data_hash: String! # string
+  data_about: String! # string
+  data_profiles_website: String! # string
+  data_profiles_twitter: String! # string
+  data_profiles_github: String! # string
+  data_profiles_blog: String! # string
+  data_op_multisig: Bytes! # address
+  founder: Bytes! # address
+  createdAt: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
