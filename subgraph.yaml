@@ -6,9 +6,9 @@ dataSources:
     name: SpaceDock
     network: optimism-goerli
     source:
-      address: "0x70ada6a349c7ef156c6008785f9859665f6b55f2"
+      address: "0x12C4786927D69B28d4f86b55eA983b91fF35A1e4"
       abi: SpaceDock
-      startBlock: 13142325
+      startBlock: 13353585
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
