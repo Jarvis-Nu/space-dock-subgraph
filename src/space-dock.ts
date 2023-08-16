@@ -80,7 +80,7 @@ export function handleVentureCreated(event: VentureCreatedEvent): void {
   )
   entity.ventureId = event.params.ventureId
   entity.data_name = event.params.data.name
-  entity.data_hash = event.params.data.hash
+  entity.data_hash = event.params.data.thumbnailUrl
   entity.data_about = event.params.data.about
   entity.data_profiles_website = event.params.data.profiles.website
   entity.data_profiles_twitter = event.params.data.profiles.twitter
