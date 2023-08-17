@@ -41,7 +41,7 @@ type VentureCreated @entity(immutable: true) {
   id: Bytes!
   ventureId: BigInt! # uint256
   data_name: String! # string
-  data_hash: String! # string
+  data_thumbnail_url: String! # string
   data_about: String! # string
   data_profiles_website: String! # string
   data_profiles_twitter: String! # string
